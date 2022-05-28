@@ -16,7 +16,7 @@ $arrComentarios = $data['comentarios'];
 				Inicio
 				<i class="fa fa-angle-right m-l-9 m-r-10" aria-hidden="true"></i>
 			</a>
-			<a href="<?= base_url().'/tienda/categoria/'.$rutacategoria; ?>" class="stext-109 cl8 hov-cl1 trans-04">
+			<a href="<?= base_url().'/tienda/categoria/'.$rutacategoria; ?>" class="cl8">
 				<?= $arrServicio['categoria'] ?>
 				<i class="fa fa-angle-right m-l-9 m-r-10" aria-hidden="true"></i>
 			</a>
@@ -210,8 +210,8 @@ $arrComentarios = $data['comentarios'];
 							</div>
 							<?php 
 							//var_dump($_SESSION['userData']);
-								for ($p=0; $p < count($arrComentarios) ; $p++) {
-									
+							if(!empty($arrComentarios)){							
+								for ($p=0; $p < count($arrComentarios) ; $p++) {						
 							?>
 							<div class="">
 								
@@ -220,7 +220,14 @@ $arrComentarios = $data['comentarios'];
 								<!-- <p><?= $arrComentarios[$p]['email'];?></p> -->
 								<p><?= $arrComentarios[$p]['mensaje'];?></p>
 							</div>
-							<?php } ?>												
+							<?php 
+							}	
+						} else{ ?>
+							<span class="text-secondary">No hay comentarios aquí, ingresa uno!</span>
+						<?php
+						}
+						
+						?>												
 						</div>
 					
 					</div>
