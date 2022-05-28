@@ -125,7 +125,7 @@
 							Salir
 						</a>
 						<?php }else{ ?>
-						<a href="<?= base_url() ?>/login" class="flex-c-m trans-04 p-lr-25">
+						<a href="<?= base_url() ?>/login" class="flex-c-m trans-04 p-lr-25 text-secondary">
 							Iniciar Sesión
 						</a>
 						<?php } ?>

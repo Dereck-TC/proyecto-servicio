@@ -220,6 +220,7 @@
         $string = str_ireplace("[","",$string);
         $string = str_ireplace("]","",$string);
         $string = str_ireplace("==","",$string);
+        $string = htmlspecialchars($string);
         return $string;
     }
 

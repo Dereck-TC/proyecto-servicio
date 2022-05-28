@@ -437,7 +437,7 @@ if(document.querySelector("#frmContacto")){
 		if(mensaje == ""){
 			swal("", "Por favor escribe el mensaje." ,"error");
 			return false;
-		}	
+		}
 		
 		divLoading.style.display = "flex";
 		let request = (window.XMLHttpRequest) ? 

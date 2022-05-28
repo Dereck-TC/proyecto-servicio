@@ -140,7 +140,7 @@ $arrComentarios = $data['comentarios'];
 
 							<div class="bor8 m-b-20 how-pos4-parent">
 								<input class="stext-111 cl2 plh3 size-116 p-l-62 p-r-30" type="hidden" id="idservicio" name="idservicio" placeholder="Correo electrónico" value="<?= $arrServicio['idservicio'];?>">
-								
+
 							</div>
 
 							<div class="bor8 m-b-30">
@@ -155,7 +155,7 @@ $arrComentarios = $data['comentarios'];
 									<input type="radio" name="rating-star" class="rating__control screen-reader" id="rc2" value=2>
 									<input type="radio" name="rating-star" class="rating__control screen-reader" id="rc3" value=3>
 									<input type="radio" name="rating-star" class="rating__control screen-reader" id="rc4" value=4>
-									<input type="radio" name="rating-star" class="rating__control screen-reader" id="rc5" value=5>
+									<input checked type="radio" name="rating-star" class="rating__control screen-reader" id="rc5" value=5>
 									<label for="rc1" class="rating__item">
 									<svg class="rating__star">
 										<use xlink:href="#star"></use>

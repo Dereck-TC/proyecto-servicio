@@ -291,33 +291,33 @@
 															$tipopagoid,
 															$direccionenvio, 
 															$status);
-						if($request_pedido > 0 ){
-							//Insertamos detalle
-							foreach ($_SESSION['arrCarrito'] as $servicio) {
-								$servicioid = $servicio['idservicio'];
-								$precio = $servicio['precio'];
-								$cantidad = $servicio['cantidad'];
-								$this->insertDetalle($request_pedido,$servicioid,$precio,$cantidad);
-							}
+						// if($request_pedido > 0 ){
+						// 	//Insertamos detalle
+						// 	foreach ($_SESSION['arrCarrito'] as $servicio) {
+						// 		$servicioid = $servicio['idservicio'];
+						// 		$precio = $servicio['precio'];
+						// 		$cantidad = $servicio['cantidad'];
+						// 		$this->insertDetalle($request_pedido,$servicioid,$precio,$cantidad);
+						// 	}
 
-							$infoOrden = $this->getPedido($request_pedido);
-							$dataEmailOrden = array('asunto' => "Se ha creado la orden No.".$request_pedido,
-													'email' => $_SESSION['userData']['email_user'], 
-													'emailCopia' => EMAIL_PEDIDOS,
-													'pedido' => $infoOrden );
-							sendEmail($dataEmailOrden,"email_notificacion_orden");
+						// 	$infoOrden = $this->getPedido($request_pedido);
+						// 	$dataEmailOrden = array('asunto' => "Se ha creado la orden No.".$request_pedido,
+						// 							'email' => $_SESSION['userData']['email_user'], 
+						// 							'emailCopia' => EMAIL_PEDIDOS,
+						// 							'pedido' => $infoOrden );
+						// 	sendEmail($dataEmailOrden,"email_notificacion_orden");
 
-							$orden = openssl_encrypt($request_pedido, METHODENCRIPT, KEY);
-							$transaccion = openssl_encrypt($idtransaccionpaypal, METHODENCRIPT, KEY);
-							$arrResponse = array("status" => true, 
-											"orden" => $orden, 
-											"transaccion" =>$transaccion,
-											"msg" => 'Pedido realizado'
-										);
-							$_SESSION['dataorden'] = $arrResponse;
-							unset($_SESSION['arrCarrito']);
-							session_regenerate_id(true);
-						}
+						// 	$orden = openssl_encrypt($request_pedido, METHODENCRIPT, KEY);
+						// 	$transaccion = openssl_encrypt($idtransaccionpaypal, METHODENCRIPT, KEY);
+						// 	$arrResponse = array("status" => true, 
+						// 					"orden" => $orden, 
+						// 					"transaccion" =>$transaccion,
+						// 					"msg" => 'Pedido realizado'
+						// 				);
+						// 	$_SESSION['dataorden'] = $arrResponse;
+						// 	unset($_SESSION['arrCarrito']);
+						// 	session_regenerate_id(true);
+						// }
 					}else{ //Pago con PayPal
 						$jsonPaypal = $_POST['datapay'];
 						$objPaypal = json_decode($jsonPaypal);
@@ -475,8 +475,8 @@
 					$sesion = $_SESSION['userData'];
 					$nombre = $sesion['nombres'];
 					$email  = $sesion['email_user'];
-					$mensaje  = strClean($_POST['mensaje']);	
-					$valoracion = $_POST['rating-star'];
+					$mensaje  = strClean($_POST['mensaje']);
+					$valoracion = isset($_POST['rating-star']) ? $_POST['rating-star'] : 5;
 					$idservicio  = $_POST['idservicio'];
 					$userContact = $this->setContacto($nombre,$email,$mensaje,$valoracion,$idservicio/**,$ip,$dispositivo,$useragent*/);
 					if($userContact > 0){
