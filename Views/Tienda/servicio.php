@@ -170,6 +170,7 @@ $arrComentarios = $data['comentarios'];
 							</div>
 						</div>
 						<div class="p-t-33">
+						<?php if(isset($_SESSION['login'])){  ?>
 					<div class="flex-w flex-r-m p-b-10">
 						<div class="size-204 flex-w flex-m respon6-next">
 							<!-- <div class="wrap-num-product flex-w m-r-20 m-tb-10">
@@ -193,6 +194,7 @@ $arrComentarios = $data['comentarios'];
 							
 						</div>
 					</div>	
+					<?php } ?>
 				</div>
 					</div>
 				</div>
@@ -202,6 +204,7 @@ $arrComentarios = $data['comentarios'];
 			<div class="container">
 				<div class="flex-w flex-tr">
 					<div class="size-210 bor10 p-lr-70 p-t-55 p-b-70 p-lr-15-lg w-full-md">
+					<?php if(isset($_SESSION['login'])){  ?>
 						<form id="frmContacto">
 							<h4 class="mtext-105 cl2 txt-center p-b-30">
 								Comentar Servicio
@@ -275,6 +278,10 @@ $arrComentarios = $data['comentarios'];
 								COMENTAR
 							</button>
 						</form>
+					<?php }else{?>
+						<span>Debes iniciar sesión para comentar, </span>
+						<a href="<?=base_url() ?>/login"> iniciar sesión</a>
+					<?php }?>
 					</div>
 
 					<div id="coments" class="size-210 bor10 flex-w flex-col-m p-lr-30 p-tb-30 p-lr-15-lg w-full-md">
