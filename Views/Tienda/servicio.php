@@ -57,25 +57,9 @@ $arrComentarios = $data['comentarios'];
 							</div>
 						</div>
 					</div>
-					<a href="<?= base_url() ?>/contacto" class="btn btn-warning">
-					Ver comentarios
-				</a>
-				</div>
-				
-				<div class="col-md-6 col-lg-5 p-b-30">
-					<div class="p-r-50 p-t-5 p-lr-0-lg">
-					<!-- <span><?= $arrServicio['idservicio'];?></span> -->
-						<h4 class="mtext-105 cl2 js-name-detail p-b-14">
-							<?= $arrServicio['nombre']; ?>
-						</h4>
-						<span class="mtext-106 cl2">
-							<?= SMONEY.formatMoney($arrServicio['precio']); ?>
-						</span>
-						<p class="stext-102 cl3 p-t-23"></p>
-						<?= $arrServicio['descripcion']; ?>
-						<!--  -->
-											
-						<div class="p-t-33">
+					<!-- <a href="<?= base_url() ?>/contacto" class="btn btn-warning">
+					Ver comentarios -->
+					<div class="p-t-33">
 							<div class="flex-w flex-r-m p-b-10">
 								<div class="size-204 flex-w flex-m respon6-next">
 									<!-- <div class="wrap-num-product flex-w m-r-20 m-tb-10">
@@ -90,17 +74,37 @@ $arrComentarios = $data['comentarios'];
 										</div> <?= openssl_encrypt($arrServicio['idservicio'],METHODENCRIPT,KEY); ?> js-addcart-detail
 									</div> <?= openssl_encrypt($arrServicio['idservicio'],METHODENCRIPT,KEY); ?> js-addcart-detail-->
 
-									<!-- <button id="<?= openssl_encrypt($arrServicio['idservicio'],METHODENCRIPT,KEY); ?>" class="btn btn-primary js-addcart-detail">
+									<button id="<?= openssl_encrypt($arrServicio['idservicio'],METHODENCRIPT,KEY); ?>" class="btn btn-primary js-addcart-detail">
 										Comprar
 									</button> &nbsp &nbsp
 									<a href="<?= base_url() ?>/carrito" class="btn btn-success">
 										Ver Carrito
-									</a>  -->
+									</a> 
 									
 								</div>
 							</div>	
 						</div>
-						<!--  -->
+				</a>
+				</div>
+				
+				<div class="col-md-6 col-lg-5 p-b-30">
+					<div class="p-r-50 p-t-5 p-lr-0-lg">
+					
+						<h4 class="mtext-105 cl2 js-name-detail p-b-14">
+							<?= $arrServicio['nombre']; ?>
+						</h4>
+						<span class="mtext-106 cl2">
+							<?= SMONEY.formatMoney($arrServicio['precio']); ?>
+						</span>
+
+						<h5 class="mtext-10 cl2 p-t-23">Descripción</h5>
+
+						<p class="stext-102 cl3"></p>
+						<?= $arrServicio['descripcion']; ?>
+						
+						<p class="stext-102 cl3"></p>
+						<span class="mtext-10 cl2 p-t-23">Duración: </span>
+						<?= $arrServicio['stock']; ?><span> mes(es)</span>
 						<!-- <div class="flex-w flex-m p-l-100 p-t-40 respon7">
 							<div class="flex-m bor9 p-r-10 m-r-11">
 								Compartir en:
@@ -120,6 +124,76 @@ $arrComentarios = $data['comentarios'];
 								<i class="fab fa-whatsapp" aria-hidden="true"></i>
 							</a>
 						</div> -->
+						<div class="p-r-50 p-t-5 p-lr-0-lg">
+							<div class="containerRT">
+								<div class="innerRT">
+									<div class="ratingRT">
+										<span id="ratingAverage" class="rating-numRT">4.0</span>
+										<div class="rating-starsRT" id="starsRatingAverage">
+											<span><i class="active icon-star"></i></span>
+											<span><i class="icon-star"></i></span>
+											<span><i class="icon-star"></i></span>
+											<span><i class="icon-star"></i></span>
+											<span><i class="icon-star"></i></span>
+										</div>
+										<div class="rating-users"><i class="icon-user"></i> <span id="people"><?= empty($arrComentarios) ? 0 : count($arrComentarios) ?></span> total</div>
+									</div>
+								
+									<div class="histoRT">
+										<div class="five histo-rateRT">
+										<span class="histo-starRT"><i class="active icon-star"></i> 5 </span>
+										<span class="bar-blockRT">
+											<span id="bar-five" class="barRT"> <span id="fiveStars">
+												<?php 
+													if(empty($arrComentarios)){
+														echo '0';
+													}else{
+														// cantidad de valoracion = 5
+														$count = 0;
+														foreach($arrComentarios as $comment){
+															if($comment['valoracion'] == 5){
+																$count++;
+															}
+														}
+														echo $count;
+													}
+												?>
+											</span>&nbsp; </span>
+										</span>
+										</div>
+								
+										<div class="four histo-rateRT">
+										<span class="histo-starRT"><i class="active icon-star"></i> 4 </span>
+										<span class="bar-blockRT">
+											<span id="bar-four" class="barRT"> <span id="fourStars">171,298</span>&nbsp; </span>
+										</span>
+										</div>
+								
+										<div class="three histo-rateRT">
+										<span class="histo-starRT"> <i class="active icon-star"></i> 3 </span>
+										<span class="bar-blockRT">
+											<span id="bar-three" class="barRT"> <span id="threeStars">94,940</span>&nbsp; </span>
+										</span>
+										</div>
+								
+										<div class="two histo-rateRT">
+										<span class="histo-starRT"> <i class="active icon-star"></i> 2 </span>
+										<span class="bar-blockRT">
+											<span id="bar-two" class="barRT"> <span id="twoStars">44,525</span>&nbsp; </span>
+										</span>
+										</div>
+								
+										<div class="one histo-rateRT">
+										<span class="histo-starRT"> <i class="active icon-star"></i> 1 </span>
+										<span class="bar-blockRT">
+											<span id="bar-one" class="barRT"> <span id="oneStar">136,457</span>&nbsp; </span>
+										</span>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						
 					</div>
 				</div>
 			</div>

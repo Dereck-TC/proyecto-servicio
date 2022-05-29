@@ -492,6 +492,10 @@
 			die();
 		}
 
+		public function getRatingC($idServicio){
+			echo $this->getRating($idServicio);
+		}
+
 	}
 
  ?>

@@ -1,15 +1,15 @@
 <?php 
-	const BASE_URL = "http://localhost/proyecto-servicio";
+	const BASE_URL = "http://localhost/serviciosx";
 	//const BASE_URL = "https://takdev.herokuapp.com";
 
 	//Zona horaria
 	date_default_timezone_set('America/Lima');
 
 	//Datos de conexión a Base de Datos
-	const DB_HOST = "localhost:3306";
+	const DB_HOST = "localhost:3307";
 	const DB_NAME = "servicios";
 	const DB_USER = "root";
-	const DB_PASSWORD = "";
+	const DB_PASSWORD = "admin123456";
 	const DB_CHARSET = "utf8";
 
 	//Base de datos en produccion

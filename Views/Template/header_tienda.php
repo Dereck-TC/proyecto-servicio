@@ -68,6 +68,7 @@
 	<link rel="stylesheet" type="text/css" href="<?= media() ?>/tienda/css/main.css">
 	<link rel="stylesheet" type="text/css" href="<?= media(); ?>/css/style.css">
 	<link rel="stylesheet" type="text/css" href="<?= media(); ?>/css/start.css">
+	<link rel="stylesheet" type="text/css" href="<?= media(); ?>/css/rating.css">
 <!--===============================================================================================-->
 </head>
 <body class="animsition">
