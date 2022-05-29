@@ -73,8 +73,6 @@ $arrComentarios = $data['comentarios'];
 						</span>
 						<p class="stext-102 cl3 p-t-23"></p>
 						<?= $arrServicio['descripcion']; ?>
-						<!--  -->
-											
 						<div class="p-t-33">
 							<div class="flex-w flex-r-m p-b-10">
 								<div class="size-204 flex-w flex-m respon6-next">
@@ -121,9 +119,102 @@ $arrComentarios = $data['comentarios'];
 							</a>
 						</div> -->
 					</div>
+
+					<div class="p-r-50 p-t-5 p-lr-0-lg">
+						<div class="containerRT">
+							<div class="innerRT">
+								<div class="ratingRT">
+									<span id="ratingAverage" class="rating-numRT">4.0</span>
+									<div class="rating-starsRT" id="starsRatingAverage">
+										<span><i class="active icon-star"></i></span>
+										<span><i class="icon-star"></i></span>
+										<span><i class="icon-star"></i></span>
+										<span><i class="icon-star"></i></span>
+										<span><i class="icon-star"></i></span>
+									</div>
+									<div class="rating-users"><i class="icon-user"></i> <span id="people"><?= empty($arrComentarios) ? 0 : count($arrComentarios) ?></span> total</div>
+								</div>
+							
+								<div class="histoRT">
+									<div class="five histo-rateRT">
+									<span class="histo-starRT"><i class="active icon-star"></i> 5 </span>
+									<span class="bar-blockRT">
+										<span id="bar-five" class="barRT"> <span id="fiveStars">
+											<?php 
+												if(empty($arrComentarios)){
+													echo '0';
+												}else{
+													// cantidad de valoracion = 5
+													$count = 0;
+													foreach($arrComentarios as $comment){
+														if($comment['valoracion'] == 5){
+															$count++;
+														}
+													}
+													echo $count;
+												}
+											?>
+										</span>&nbsp; </span>
+									</span>
+									</div>
+							
+									<div class="four histo-rateRT">
+									<span class="histo-starRT"><i class="active icon-star"></i> 4 </span>
+									<span class="bar-blockRT">
+										<span id="bar-four" class="barRT"> <span id="fourStars">171,298</span>&nbsp; </span>
+									</span>
+									</div>
+							
+									<div class="three histo-rateRT">
+									<span class="histo-starRT"> <i class="active icon-star"></i> 3 </span>
+									<span class="bar-blockRT">
+										<span id="bar-three" class="barRT"> <span id="threeStars">94,940</span>&nbsp; </span>
+									</span>
+									</div>
+							
+									<div class="two histo-rateRT">
+									<span class="histo-starRT"> <i class="active icon-star"></i> 2 </span>
+									<span class="bar-blockRT">
+										<span id="bar-two" class="barRT"> <span id="twoStars">44,525</span>&nbsp; </span>
+									</span>
+									</div>
+							
+									<div class="one histo-rateRT">
+									<span class="histo-starRT"> <i class="active icon-star"></i> 1 </span>
+									<span class="bar-blockRT">
+										<span id="bar-one" class="barRT"> <span id="oneStar">136,457</span>&nbsp; </span>
+									</span>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+
+						<!-- <div class="flex-w flex-m p-l-100 p-t-40 respon7">
+							<div class="flex-m bor9 p-r-10 m-r-11">
+								Compartir en:
+							</div>
+
+							<a href="#" class="fs-14 cl3 hov-cl1 trans-04 lh-10 p-lr-5 p-tb-2 m-r-8 tooltip100" data-tooltip="Facebook"
+								onclick="window.open('https://www.facebook.com/sharer/sharer.php?u=<?= $urlShared; ?> &t=<?= $arrServicio['nombre'] ?>','ventanacompartir', 'toolbar=0, status=0, width=650, height=450');"
+								>
+								<i class="fa fa-facebook"></i>
+							</a>
+
+							<a href="https://twitter.com/intent/tweet?text=<?= $arrServicio['nombre'] ?>&url=<?= $urlShared; ?>&hashtags=<?= SHAREDHASH; ?>" target="_blank" class="fs-14 cl3 hov-cl1 trans-04 lh-10 p-lr-5 p-tb-2 m-r-8 tooltip100" data-tooltip="Twitter">
+								<i class="fa fa-twitter"></i>
+							</a>
+
+							<a href="https://api.whatsapp.com/send?text=<?= $arrServicio['nombre'].' '.$urlShared ?>" target="_blank" class="fs-14 cl3 hov-cl1 trans-04 lh-10 p-lr-5 p-tb-2 m-r-8 tooltip100" data-tooltip="WhatsApp">
+								<i class="fab fa-whatsapp" aria-hidden="true"></i>
+							</a>
+						</div> -->
+					</div>
 				</div>
 			</div>
 		</div>
+
+		<!-- Comentarios -->
 		<section class="bg0 p-t-104 p-b-116">
 			<div class="container">
 				<div class="flex-w flex-tr">

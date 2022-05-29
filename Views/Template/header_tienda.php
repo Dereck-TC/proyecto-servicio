@@ -69,6 +69,9 @@
 	<link rel="stylesheet" type="text/css" href="<?= media(); ?>/css/style.css">
 	<link rel="stylesheet" type="text/css" href="<?= media(); ?>/css/start.css">
 <!--===============================================================================================-->
+
+<!-- Estrellitas uwu -->
+	<link rel="stylesheet" type="text/css" href="<?= media() ?>/css/rating.css">
 </head>
 <body class="animsition">
 	<!-- Modal -->

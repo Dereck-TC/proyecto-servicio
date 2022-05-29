@@ -16,4 +16,12 @@ trait TComentario{
         $request = $this->con->select_all($sql);
         return $request;
     }
+
+    public function getRating(int $idServicio){
+        $this->con = new Mysql();
+        $sql = "SELECT id, valoracion
+        FROM comentario WHERE idservicio = '{$idServicio}'";
+        $request = $this->con->select_all($sql);
+        return json_encode($request);
+    }
 }

@@ -86,6 +86,10 @@
 			}
 		}
 
+		public function getRatingC($idServicio){
+			echo $this->getRating($idServicio);
+		}
+
 		public function addCarrito(){
 			if($_POST){
 				//unset($_SESSION['arrCarrito']);exit;
