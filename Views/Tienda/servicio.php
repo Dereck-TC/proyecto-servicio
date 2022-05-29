@@ -58,33 +58,9 @@ $arrComentarios = $data['comentarios'];
 						</div>
 					</div>
 					<!-- <a href="<?= base_url() ?>/contacto" class="btn btn-warning">
-					Ver comentarios -->
-					<div class="p-t-33">
-							<div class="flex-w flex-r-m p-b-10">
-								<div class="size-204 flex-w flex-m respon6-next">
-									<!-- <div class="wrap-num-product flex-w m-r-20 m-tb-10">
-										<div class="btn-num-product-down cl8 hov-btn3 trans-04 flex-c-m">
-											<i class="fs-16 zmdi zmdi-minus"></i>
-										</div>
-
-										<input id="cant-product" class="mtext-104 cl3 txt-center num-product" type="number" name="num-product" value="1" min="1">
-
-										<div class="btn-num-product-up cl8 hov-btn3 trans-04 flex-c-m">
-											<i class="fs-16 zmdi zmdi-plus"></i>
-										</div> <?= openssl_encrypt($arrServicio['idservicio'],METHODENCRIPT,KEY); ?> js-addcart-detail
-									</div> <?= openssl_encrypt($arrServicio['idservicio'],METHODENCRIPT,KEY); ?> js-addcart-detail-->
-
-									<button id="<?= openssl_encrypt($arrServicio['idservicio'],METHODENCRIPT,KEY); ?>" class="btn btn-primary js-addcart-detail">
-										Comprar
-									</button> &nbsp &nbsp
-									<a href="<?= base_url() ?>/carrito" class="btn btn-success">
-										Ver Carrito
-									</a> 
-									
-								</div>
-							</div>	
-						</div>
-				</a>
+					Ver comentarios
+				</a> -->
+				
 				</div>
 				
 				<div class="col-md-6 col-lg-5 p-b-30">
@@ -104,7 +80,7 @@ $arrComentarios = $data['comentarios'];
 						
 						<p class="stext-102 cl3"></p>
 						<span class="mtext-10 cl2 p-t-23">Duración: </span>
-						<?= $arrServicio['stock']; ?><span> mes(es)</span>
+						<?= $arrServicio['stock']; ?><span> meses</span>
 						<!-- <div class="flex-w flex-m p-l-100 p-t-40 respon7">
 							<div class="flex-m bor9 p-r-10 m-r-11">
 								Compartir en:
@@ -193,7 +169,31 @@ $arrComentarios = $data['comentarios'];
 								</div>
 							</div>
 						</div>
-						
+						<div class="p-t-33">
+					<div class="flex-w flex-r-m p-b-10">
+						<div class="size-204 flex-w flex-m respon6-next">
+							<!-- <div class="wrap-num-product flex-w m-r-20 m-tb-10">
+								<div class="btn-num-product-down cl8 hov-btn3 trans-04 flex-c-m">
+									<i class="fs-16 zmdi zmdi-minus"></i>
+								</div>
+
+								<input id="cant-product" class="mtext-104 cl3 txt-center num-product" type="number" name="num-product" value="1" min="1">
+
+								<div class="btn-num-product-up cl8 hov-btn3 trans-04 flex-c-m">
+									<i class="fs-16 zmdi zmdi-plus"></i>
+								</div> <?= openssl_encrypt($arrServicio['idservicio'],METHODENCRIPT,KEY); ?> js-addcart-detail
+							</div> <?= openssl_encrypt($arrServicio['idservicio'],METHODENCRIPT,KEY); ?> js-addcart-detail-->
+
+							<button id="<?= openssl_encrypt($arrServicio['idservicio'],METHODENCRIPT,KEY); ?>" class="btn btn-primary js-addcart-detail">
+								Comprar
+							</button> &nbsp &nbsp
+							<a href="<?= base_url() ?>/carrito" class="btn btn-success">
+								Ver Carrito
+							</a> 
+							
+						</div>
+					</div>	
+				</div>
 					</div>
 				</div>
 			</div>
