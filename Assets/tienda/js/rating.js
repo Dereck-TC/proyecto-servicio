@@ -12,22 +12,27 @@ let idServicio = document.getElementById('idservicio').value;
 function getRatingAverage(data) {
     let sum = 0;
     let count = 0;
-    for (let i = 0; i < data.length; i++) {
-        sum += parseInt(data[i].valoracion);
-        count++;
-    }
-
-    let colorStars = '';
-    for(let i = 0; i < 5; i++) {
-        if(Math.round(sum/count) > i) {
-            colorStars += '<span><i class="active icon-star"></i></span>';
-        } else {
-            colorStars += '<span><i class="icon-star"></i></span>';
+    // if(!empty(data)){
+        for (let i = 0; i < data.length; i++) {
+            sum += parseInt(data[i].valoracion);
+            count++;
         }
-    }
-    StarsRatingAverage.innerHTML = colorStars;
-
-    return (sum / count).toFixed(1);
+    
+        let colorStars = '';
+        for(let i = 0; i < 5; i++) {
+            if(Math.round(sum/count) > i) {
+                colorStars += '<span><i class="active icon-star"></i></span>';
+            } else {
+                colorStars += '<span><i class="icon-star"></i></span>';
+            }
+        }
+        StarsRatingAverage.innerHTML = colorStars;
+    
+        return (sum / count).toFixed(1);
+    // }else{
+    //     return 0;
+    // }
+    
 }
 
 // get amount of people per rating
@@ -87,7 +92,7 @@ request.send();
 request.onreadystatechange = function(){
     if(request.readyState == 4 && request.status == 200){
         let data = JSON.parse(request.responseText);
-        let ratingAverage = getRatingAverage(data);
+        let ratingAverage = getRatingAverage(data) == "NaN" ? 0 : getRatingAverage(data);
         let ratingAmount = getRatingAmount(data);
         let ratingPercentage = getRatingPercentage(data);
 

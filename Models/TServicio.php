@@ -146,10 +146,14 @@ trait TServicio{
 						c.ruta as ruta_categoria,
 						p.precio,
 						p.ruta,
-						p.stock
+						p.stock,
+						p.idpersona,
+						u.nombres as persona
 				FROM servicio p 
 				INNER JOIN categoria c
 				ON p.categoriaid = c.idcategoria
+				INNER JOIN persona u
+				ON p.idpersona = u.idpersona
 				WHERE p.status != 0 AND p.idservicio = '{$this->intIdServicio}' AND p.ruta = '{$this->strRuta}' ";
 				$request = $this->con->select($sql);
 				if(!empty($request)){
@@ -192,7 +196,8 @@ trait TServicio{
 						c.nombre as categoria,
 						p.precio,
 						p.ruta,
-						p.stock
+						p.stock,
+						p.idpersona
 				FROM servicio p 
 				INNER JOIN categoria c
 				ON p.categoriaid = c.idcategoria

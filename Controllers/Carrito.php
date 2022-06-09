@@ -13,9 +13,14 @@
 
 		public function carrito()
 		{
+			if(empty($_SESSION['arrCarrito'])){ 
+				header("Location: ".base_url());
+				die();
+			}
 			$data['page_tag'] = NOMBRE_EMPESA.' - Carrito';
 			$data['page_title'] = 'Carrito de compras';
 			$data['page_name'] = "carrito";
+			$data['tiposPago'] = $this->getTiposPagoT();
 			$this->views->getView($this,"carrito",$data); 
 		}
 		public function procesarpago()

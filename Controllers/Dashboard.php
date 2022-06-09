@@ -37,11 +37,11 @@
 			//dep($data['ventasMDia']);exit;
 			$data['ventasAnio'] = $this->model->selectVentasAnio($anio);
 			//dep($data['ventasAnio']);exit;
-			if( $_SESSION['userData']['idrol'] == RCLIENTES ){
-				$this->views->getView($this,"dashboardCliente",$data);
-			}else{
+			// if( $_SESSION['userData']['idrol'] == RCLIENTES ){
+			// 	$this->views->getView($this,"dashboardCliente",$data);
+			// }else{
 				$this->views->getView($this,"dashboard",$data);
-			}
+			// }
 		}
 
 		public function tipoPagoMes(){

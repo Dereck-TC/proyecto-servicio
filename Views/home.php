@@ -204,7 +204,7 @@
 								</span>
 							</div>
 
-							<div class="block2-txt-child2 flex-r p-t-3">
+							<!-- <div class="block2-txt-child2 flex-r p-t-3">
 								<a href="#"
 								 id="<?= openssl_encrypt($arrServicios[$p]['idservicio'],METHODENCRIPT,KEY); ?>"
 								 class="btn-addwish-b2 dis-block pos-relative js-addwish-b2 js-addcart-detail
@@ -212,7 +212,7 @@
 								 ">
 									<i class="zmdi zmdi-shopping-cart"></i>
 								</a>
-							</div>
+							</div> -->
 						</div>
 					</div>
 				</div>

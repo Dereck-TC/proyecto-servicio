@@ -80,7 +80,9 @@ $arrComentarios = $data['comentarios'];
 						
 						<p class="stext-102 cl3"></p>
 						<span class="mtext-10 cl2 p-t-23">Duración: </span>
-						<?= $arrServicio['stock']; ?><span> meses</span>
+						<?= $arrServicio['stock']; ?><span> meses</span></br>
+						<span class="mtext-10 cl2 p-t-23">Proveedor: </span>
+						<?= $arrServicio['persona']; ?>
 						<!-- <div class="flex-w flex-m p-l-100 p-t-40 respon7">
 							<div class="flex-m bor9 p-r-10 m-r-11">
 								Compartir en:
@@ -188,7 +190,7 @@ $arrComentarios = $data['comentarios'];
 							<button id="<?= openssl_encrypt($arrServicio['idservicio'],METHODENCRIPT,KEY); ?>" class="btn btn-primary js-addcart-detail">
 								Comprar
 							</button> &nbsp &nbsp
-							<a href="<?= base_url() ?>/carrito" class="btn btn-success">
+							<a href="<?=base_url()?>/carrito" class="btn btn-success">
 								Ver Carrito
 							</a> 
 							
