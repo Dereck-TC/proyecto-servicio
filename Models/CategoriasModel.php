@@ -50,6 +50,19 @@
 			return $request;
 		}
 
+		public function selectCategoriaRubro($idpersona)
+		{
+			$this->intIdpersona = $idpersona;
+			$sql = "SELECT c.idcategoria,
+						c.nombre 
+					FROM categoria c
+					INNER JOIN persona p
+					ON c.idcategoria = p.categoriaid 
+					WHERE p.idpersona = $this->intIdpersona";
+			$request = $this->select($sql);
+			return $request;
+		}
+
 		public function selectCategoria(int $idcategoria){
 			$this->intIdcategoria = $idcategoria;
 			$sql = "SELECT * FROM categoria

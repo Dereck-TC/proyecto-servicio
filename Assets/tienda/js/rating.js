@@ -92,7 +92,7 @@ request.send();
 request.onreadystatechange = function(){
     if(request.readyState == 4 && request.status == 200){
         let data = JSON.parse(request.responseText);
-        let ratingAverage = getRatingAverage(data) == "NaN" ? 0 : getRatingAverage(data);
+        var ratingAverage = getRatingAverage(data) == "NaN" ? 0 : getRatingAverage(data);
         let ratingAmount = getRatingAmount(data);
         let ratingPercentage = getRatingPercentage(data);
 
@@ -104,5 +104,8 @@ request.onreadystatechange = function(){
         OneStar.innerHTML = ratingAmount[1] ? ratingAmount[1]: 0  ;
         People.innerHTML = data.length;
         setBars(ratingPercentage);
+       
     }
+    
 }
+console.log(getRatingAverage(data))

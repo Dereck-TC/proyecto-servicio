@@ -20,6 +20,7 @@ document.addEventListener('DOMContentLoaded', function(){
             {"data":"email_user"},
             {"data":"telefono"},
             {"data":"nombrerol"},
+            {"data":"nombre"},
             {"data":"status"},
             {"data":"options"}
         ],
@@ -63,6 +64,7 @@ document.addEventListener('DOMContentLoaded', function(){
             let strEmail = document.querySelector('#txtEmail').value;
             let intTelefono = document.querySelector('#txtTelefono').value;
             let intTipousuario = document.querySelector('#listRolid').value;
+            let intRubrousuario = document.querySelector('#listRubro').value;
             let strPassword = document.querySelector('#txtPassword').value;
             let intStatus = document.querySelector('#listStatus').value;
 
@@ -94,14 +96,15 @@ document.addEventListener('DOMContentLoaded', function(){
                             tableUsuarios.api().ajax.reload();
                         }else{
                             htmlStatus = intStatus == 1 ? 
-                            '<span class="badge badge-success">Activo</span>' : 
-                            '<span class="badge badge-danger">Inactivo</span>';
+                            '<span class="">Activo</span>' : 
+                            '<span class="">Inactivo</span>';
                             rowTable.cells[1].textContent = strNombre;
                             rowTable.cells[2].textContent = strApellido;
                             rowTable.cells[3].textContent = strEmail;
                             rowTable.cells[4].textContent = intTelefono;
                             rowTable.cells[5].textContent = document.querySelector("#listRolid").selectedOptions[0].text;
-                            rowTable.cells[6].innerHTML = htmlStatus;
+                            rowTable.cells[6].textContent = document.querySelector("#listRubro").selectedOptions[0].text;
+                            rowTable.cells[7].innerHTML = htmlStatus;
                             rowTable = ""; 
                         }
                         $('#modalFormUsuario').modal("hide");
@@ -310,7 +313,9 @@ function fntEditUsuario(element,idpersona){
                 document.querySelector("#txtTelefono").value = objData.data.telefono;
                 document.querySelector("#txtEmail").value = objData.data.email_user;
                 document.querySelector("#listRolid").value =objData.data.idrol;
-                $('#listRolid').selectpicker('render');
+                document.querySelector("#listRubro").value =objData.data.idcategoria;
+                $('#listRolid').selectpicker('render');         
+                $('#listRubro').selectpicker('render');
 
                 if(objData.data.status == 1){
                     document.querySelector("#listStatus").value = 1;

@@ -31,6 +31,7 @@
                           <th>Email</th>
                           <th>Teléfono</th>
                           <th>Rol</th>
+                          <th>Rubro</th>
                           <th>Status</th>
                           <th>Acciones</th>
                         </tr>
@@ -43,6 +44,7 @@
                           <td>carlos@info.com</td>
                           <td>78542155</td>
                           <td>Administrador</td>
+                          <td>Terapeutico</td>
                           <td>Activo</td>
                           <td></td>
                         </tr>

@@ -22,16 +22,16 @@
         // searchBtn.addEventListener("click" , () =>{
         //     sidebar.classList.remove("close");
         // })
-        modesSwitchs.addEventListener("click" , () =>{
-        body.classList.toggle("dark");
+        // modesSwitchs.addEventListener("click" , () =>{
+        // body.classList.toggle("dark");
 
-        if(body.classList.contains("dark")){
-            modeText.innerText = "Light mode";
-        }else{
-            modeText.innerText = "Dark mode";
+        // if(body.classList.contains("dark")){
+        //     modeText.innerText = "Light mode";
+        // }else{
+        //     modeText.innerText = "Dark mode";
             
-        }
-        });
+        // }
+        // });
     </script>
     <!-- Essential javascripts for application to work-->
     <script src="<?= media(); ?>/js/jquery-3.3.1.min.js"></script>

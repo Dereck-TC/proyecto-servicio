@@ -27,6 +27,31 @@
 			return $request;
 
 		}	
+		public function selectPedidosProv($idpersona = null){
+			$where = "";
+			if($idpersona != null){
+				$where = "  WHERE s.idpersona = $idpersona";
+			}
+			$sql = "SELECT p.idpedido,
+							p.referenciacobro,
+							p.idtransaccionpaypal,
+							s.nombre as servicio,
+							DATE_FORMAT(p.fecha, '%d/%m/%Y') as fecha,
+							p.monto,
+							tp.tipopago,
+							tp.idtipopago,
+							p.status 
+					FROM pedido p 
+					INNER JOIN tipopago tp
+					ON p.tipopagoid = tp.idtipopago 
+					INNER JOIN detalle_pedido dp 
+					ON p.idpedido = dp.pedidoid
+					INNER JOIN servicio s
+					ON dp.servicioid = s.idservicio $where";
+			$request = $this->select_all($sql);
+			return $request;
+
+		}	
 
 		public function selectPedido(int $idpedido, $idpersona = NULL){
 			$busqueda = "";

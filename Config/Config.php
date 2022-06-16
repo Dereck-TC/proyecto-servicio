@@ -100,8 +100,8 @@
 
 	//Servicios por página
 	const CANTPORDHOME = 8;
-	const PROPORPAGINA = 4;
-	const PROCATEGORIA = 4;
+	const PROPORPAGINA = 10;
+	const PROCATEGORIA = 10;
 	const PROBUSCAR = 4;
 
 	//REDES SOCIALES

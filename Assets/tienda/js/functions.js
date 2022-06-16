@@ -351,44 +351,6 @@ function fntViewPago(){
 // 	},false);
 // }
 
-let btnPago = document.querySelector("#btnComprar");
-btnPago.addEventListener('click',function() { 
-	let dir = document.querySelector("#txtDireccion").value;
-	let ciudad = document.querySelector("#txtCiudad").value;
-	let inttipopago = document.querySelector("#listtipopago").value; 
-	if( txtDireccion == "" || txtCiudad == "" || inttipopago =="" ){
-		swal("", "Complete datos de envío" , "error");
-		return;
-	}else{
-		divLoading.style.display = "flex";
-		let request = (window.XMLHttpRequest) ? 
-					new XMLHttpRequest() : 
-					new ActiveXObject('Microsoft.XMLHTTP');
-		let ajaxUrl = base_url+'/Tienda/procesarVenta';
-		let formData = new FormData();
-		formData.append('direccion',dir);    
-		formData.append('ciudad',ciudad);
-		formData.append('inttipopago',inttipopago);
-		request.open("POST",ajaxUrl,true);
-		request.send(formData);
-		request.onreadystatechange = function(){
-			if(request.readyState != 4) return;
-			if(request.status == 200){
-				let objData = JSON.parse(request.responseText);
-				if(objData.status){
-					window.location = base_url+"/tienda/confirmarpedido/";
-				}else{
-					swal("", objData.msg , "error");
-				}
-			}
-			divLoading.style.display = "none";
-			return false;
-		}
-	}
-
-},false);
-
-
 if(document.querySelector("#frmSuscripcion")){
 	let frmSuscripcion = document.querySelector("#frmSuscripcion");
 	frmSuscripcion.addEventListener('submit',function(e) { 
@@ -436,6 +398,9 @@ if(document.querySelector("#frmSuscripcion")){
 //console.log(document.querySelector("#rc2"));
 var valoraciones = document.getElementsByClassName('rating__control');
 //coments = $('#coments');
+//var div = document.getElementById("ratingRT");
+// var valoracionprom = document.getElementById("ratingAverage").innerHTML;
+console.log(ratingAverage);
 if(document.querySelector("#frmContacto")){
 	let frmContacto = document.querySelector("#frmContacto");
 	frmContacto.addEventListener('submit',function(e) { 
@@ -445,6 +410,7 @@ if(document.querySelector("#frmContacto")){
 		// let email = document.querySelector("#emailContacto").value;
 		let idservicio = document.querySelector("#idservicio").value;
 		let mensaje = document.querySelector("#mensaje").value;
+		//let ratingAverage = valoracionprom;
 		// let start = document.getElementsByClassName('rating-star').checked;
 		// if(start = true){
 		// 	let varolarcion = start.
@@ -456,18 +422,6 @@ if(document.querySelector("#frmContacto")){
 				valoracion = item.value;
 			}
 		}
-		//console.log(valoracion);
-		
-
-		// if(nombre == ""){
-		// 	swal("", "El nombre es obligatorio" ,"error");
-		// 	return false;
-		// }
-
-		// if(!fntEmailValidate(email)){
-		// 	swal("", "El email no es válido." ,"error");
-		// 	return false;
-		// }
 		if(idservicio == ""){
 			swal("", "Por favor escribe el id." ,"error");
 			return false;
@@ -504,3 +458,40 @@ if(document.querySelector("#frmContacto")){
 
 	},false);
 }
+
+let btnPago = document.querySelector("#btnComprar");
+btnPago.addEventListener('click',function() { 
+let dir = document.querySelector("#txtDireccion").value;
+let ciudad = document.querySelector("#txtCiudad").value;
+let inttipopago = document.querySelector("#listtipopago").value; 
+if( txtDireccion == "" || txtCiudad == "" || inttipopago =="" ){
+	swal("", "Complete datos de envío" , "error");
+	return;
+}else{
+	divLoading.style.display = "flex";
+	let request = (window.XMLHttpRequest) ? 
+				new XMLHttpRequest() : 
+				new ActiveXObject('Microsoft.XMLHTTP');
+	let ajaxUrl = base_url+'/Tienda/procesarVenta';
+	let formData = new FormData();
+	formData.append('direccion',dir);    
+	formData.append('ciudad',ciudad);
+	formData.append('inttipopago',inttipopago);
+	request.open("POST",ajaxUrl,true);
+	request.send(formData);
+	request.onreadystatechange = function(){
+		if(request.readyState != 4) return;
+		if(request.status == 200){
+			let objData = JSON.parse(request.responseText);
+			if(objData.status){
+				window.location = base_url+"/tienda/confirmarpedido/";
+			}else{
+				swal("", objData.msg , "error");
+			}
+		}
+		divLoading.style.display = "none";
+		return false;
+	}
+}
+
+},false);

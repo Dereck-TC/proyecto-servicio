@@ -24,6 +24,7 @@
                         <tr>
                           <th>ID</th>
                           <th>Ref. / Transacción</th>
+                          <th>Servicio</th>
                           <th>Fecha</th>
                           <th>Monto</th>
                           <th>Tipo pago</th>

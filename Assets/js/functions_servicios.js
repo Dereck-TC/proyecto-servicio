@@ -390,11 +390,9 @@ function fntDelInfo(idServicio){
 
 }
 
-
-
 function fntCategorias(){
     if(document.querySelector('#listCategoria')){
-        let ajaxUrl = base_url+'/Categorias/getSelectCategorias';
+        let ajaxUrl = base_url+'/Categorias/getSelectCategoriaRubro';
         let request = (window.XMLHttpRequest) ? 
                     new XMLHttpRequest() : 
                     new ActiveXObject('Microsoft.XMLHTTP');

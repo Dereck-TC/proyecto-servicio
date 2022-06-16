@@ -1,0 +1,42 @@
+Especificaciones:
+    a)El cliente podrá elegir el tipo de servicio a contratar
+        --Ruta
+            en Views, en la parte de home hay una parte donde dice <!--producta-->, ahí están listados los productos, también
+            en la parte de Views/Tienda/tienda.php están listados los productos a diferencia que ahí se pueden listar por las categorias, para entender mejor sigue la sgnt ruta
+            Views/Tienda/tienda.php
+            Assets/tienda/js/functions.js
+            Controllers/Tienda.php
+            Models/TServicio.php
+            solo se guían de los métodos que llaman cada uno para poder leer el código.
+    b) Se visualizará las competencias de los proveedores del servicio. De ser necesario también
+    sus antecedentes.
+        --Ruta
+            lo mismo de arriba, se listan todos y se pueden seleccionar
+    c) Se deberá visualizar el precio base por cada servicio, con la posibilidad que existan cargos
+    adicionales que no fueron incluidos al momento de realizar la solicitud.
+        --Ruta
+            En Views/Tienda/servicio.php busca la parte donde se listan los detalles del producto
+            Assets/tienda/js/functions.js
+            Controllers/Tienda.php
+            Models/TServicio.php
+            y sigues esa ruta para seguir los métodos que se usan (si no están ahí busca en otra carpeta, todos los modelos que tienen "T" delante corresponden a la tienda, y en controllers solo el Tienda.php es el controlador de la tienda
+            y el js de la tienda está en Assets/tienda/js/functions.js excepto lo de las estrellas y agunas cositas, pero todo está en Assets/tienda/js/
+    d) Se debe considerar que la interfaz de la app debe estar diseñada para que pueda ser usada
+    por jóvenes, adultos y ancianos.
+        --Ruta
+            papaya
+    e) Los profesionales que publican sus servicios podrán editar estos cuando lo crean
+    conveniente.
+        --Ruta
+            en Views/Servicios/servicios.php está la vista de la tabla donde se listan todos los productos
+            para su funcionamiento sigues
+                Assets/js/functions_servicio.js
+                Controllers/Servicio.php
+                Models/ServiciosModel.php
+
+Lo que falta:
+    Registrar usuario (por si solo)
+    valoraciones al pie de cada producto listado
+    ascender, de cliente a proveedor, mandando una solicitud desde el dashboard del cliente en un apartado que dice "ascender" y el administrador leerá esa solicitud en
+    dashboard en un apartado que dice "solicitudes"
+    nada más creo

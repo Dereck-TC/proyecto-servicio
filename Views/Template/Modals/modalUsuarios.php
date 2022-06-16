@@ -52,10 +52,21 @@
               </div>
               <div class="form-row">
                 <div class="form-group col-md-12">
+                    <label for="listRubro">Rubro</label>
+                    <select class="form-control" data-live-search="true" id="listRubro" name="listRubro" required > <!--cambios-->
+                      <option value="1">Salud</option>
+                      <option value="2">Tecnología</option>
+                      <option value="3">Educación</option>
+                      <option value="4">Sin rubro</option>
+                    </select>
+                </div>
+              </div>
+              <div class="form-row">
+                <div class="form-group col-md-12">
                     <label for="listStatus">Status</label>
                     <select class="form-control selectpicker" id="listStatus" name="listStatus" required >
-                        <option value="1">Activo</option>
-                        <option value="2">Inactivo</option>
+                      <option value="1">Activo</option>
+                      <option value="2">Inactivo</option>
                     </select>
                 </div>
              </div>

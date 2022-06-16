@@ -119,13 +119,16 @@
                         </a>
                     </li>
                     <?php } ?> -->
-                    <?php if(!empty($_SESSION['permisos'][4]['r']) || !empty($_SESSION['permisos'][6]['r'])){ ?>
+                    <?php if(!empty($_SESSION['permisos'][4]['r'])){ ?>
                     <li class="">
                         <a class="opt" href="<?= base_url(); ?>/servicios">
                             <i class="fa fa-th icon"></i>
                             <span class="text nav-text">Servicios</span>
                         </a>
                     </li> 
+                    <?php }
+                    if(!empty($_SESSION['permisos'][6]['r'])){
+                    ?>
                     
                     <li class="">
                         <a class="opt" href="<?= base_url(); ?>/categorias">
@@ -134,31 +137,40 @@
                         </a>
                     </li> 
                     <?php } ?>
-                    <!-- <?php if(!empty($_SESSION['permisos'][5]['r'])){ ?>
+                    <?php if(!empty($_SESSION['permisos'][5]['r'])){ ?>
                     <li class="">
                         <a class="opt" href="<?= base_url(); ?>/pedidos">
                             <i class="fa fa-cubes icon"></i>
                             <span class="text nav-text">Pedidos</span>
                         </a>
-                    </li> -->
-                    <!-- <?php } ?>
-                    <?php if(!empty($_SESSION['permisos'][MSUSCRIPTORES]['r'])){ ?>
+                    </li>
+                    <?php } ?>
+                    <!-- <?php if(!empty($_SESSION['permisos'][MSUSCRIPTORES]['r'])){ ?>
                     <li class="">
                         <a class="opt" href="<?= base_url(); ?>/suscriptores">
                             <i class="fa fa-life-ring icon"></i>
                             <span class="text nav-text">Suscriptores</span>
                         </a>
                     </li>
-                    <?php } ?>
+                    <?php } ?>-->
                     <?php if(!empty($_SESSION['permisos'][MDCONTACTOS]['r'])){ ?>
                     <li class="">
-                        <a class="opt" href="<?= base_url(); ?>/contactos">
+                        <a class="opt" href="<?= base_url(); ?>/suscriptores">
                             <i class="fa fa-paper-plane icon"></i>
-                            <span class="text nav-text">Mensajes</span>
+                            <span class="text nav-text">Solicitudes</span>
+                        </a>
+                    </li>
+                    <?php } 
+                    // var_dump($_SESSION['userData']['idrol']) ?>
+                    <?php if($_SESSION['userData']['idrol']==3){ ?>
+                    <li class="">
+                        <a class="opt" href="<?= base_url(); ?>/paginas">
+                            <i class="fa fa-paper-plane icon"></i>
+                            <span class="text nav-text">Ascender</span>
                         </a>
                     </li>
                     <?php } ?>
-                    <?php if(!empty($_SESSION['permisos'][MDPAGINAS]['r'])){ ?>
+                    <!--<?php if(!empty($_SESSION['permisos'][MDPAGINAS]['r'])){ ?>
                     <li class="">
                         <a class="opt" href="<?= base_url(); ?>/paginas">
                             <i class="fa fa-columns icon"></i>

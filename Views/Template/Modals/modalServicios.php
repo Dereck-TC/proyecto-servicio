@@ -61,8 +61,7 @@
                             <?php
                             }
                             ?>
-                              
-                              <option value="2" selected="selected">Inactivo</option>
+                              <option value="2" >Inactivo</option>
                             </select>
                         </div>
                         

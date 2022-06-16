@@ -100,7 +100,8 @@
 											'servicio' => $arrInfoServicio['nombre'],
 											'cantidad' => $cantidad,
 											'precio' => $arrInfoServicio['precio'],
-											'imagen' => $arrInfoServicio['images'][0]['url_image']
+											'imagen' => $arrInfoServicio['images'][0]['url_image'],
+											'stock' => $arrInfoServicio['stock']
 										);
 						if(isset($_SESSION['arrCarrito'])){
 							$on = true;
@@ -481,9 +482,11 @@
 					$email  = $sesion['email_user'];
 					$mensaje  = strClean($_POST['mensaje']);
 					$valoracion = isset($_POST['rating-star']) ? $_POST['rating-star'] : 5;
+					//$valoracionprom = $_POST['ratingAverage'];
 					$idservicio  = $_POST['idservicio'];
 					$userContact = $this->setContacto($nombre,$email,$mensaje,$valoracion,$idservicio/**,$ip,$dispositivo,$useragent*/);
-					if($userContact > 0){
+					$userValoracion = $this->updateValoracion($idservicio);
+					if($userContact > 0 ){
 						$arrResponse = array('status' => true, 'msg' => "Su mensaje fue enviado correctamente.");
 						
 					}else{

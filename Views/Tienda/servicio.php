@@ -106,7 +106,7 @@ $arrComentarios = $data['comentarios'];
 							<div class="containerRT">
 								<div class="innerRT">
 									<div class="ratingRT">
-										<span id="ratingAverage" class="rating-numRT">4.0</span>
+										<span id="ratingAverage" name="ratingAverage" class="rating-numRT">5</span>
 										<div class="rating-starsRT" id="starsRatingAverage">
 											<span><i class="active icon-star"></i></span>
 											<span><i class="icon-star"></i></span>
@@ -219,7 +219,7 @@ $arrComentarios = $data['comentarios'];
 
 							<div class="bor8 m-b-20 how-pos4-parent">
 								<input class="stext-111 cl2 plh3 size-116 p-l-62 p-r-30" type="hidden" id="idservicio" name="idservicio" placeholder="Correo electrónico" value="<?= $arrServicio['idservicio'];?>">
-
+								<span id="ratingAverage" name="ratingAverage" class="rating-numRT"></span>
 							</div>
 
 							<div class="bor8 m-b-30">

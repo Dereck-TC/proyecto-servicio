@@ -63,26 +63,30 @@
 			if($_SESSION['idUser'] != 1 ){
 				$whereAdmin = " and p.idpersona != 1 ";
 			}
-			$sql = "SELECT p.idpersona,p.identificacion,p.nombres,p.apellidos,p.telefono,p.email_user,p.status,r.idrol,r.nombrerol 
+			$sql = "SELECT p.idpersona,p.identificacion,p.nombres,p.apellidos,p.telefono,p.email_user,p.status,r.idrol,r.nombrerol,c.idcategoria,c.nombre,p.categoriaid 
 					FROM persona p 
 					INNER JOIN rol r
 					ON p.rolid = r.idrol
+					INNER JOIN categoria c
+					ON p.categoriaid = c.idcategoria
 					WHERE p.status != 0 ".$whereAdmin;
 					$request = $this->select_all($sql);
 					return $request;
 		}
 		public function selectUsuario(int $idpersona){
 			$this->intIdUsuario = $idpersona;
-			$sql = "SELECT p.idpersona,p.identificacion,p.nombres,p.apellidos,p.telefono,p.email_user,p.nit,p.nombrefiscal,p.direccionfiscal,r.idrol,r.nombrerol,p.status, DATE_FORMAT(p.datecreated, '%d-%m-%Y') as fechaRegistro 
+			$sql = "SELECT p.idpersona,p.identificacion,p.nombres,p.apellidos,p.telefono,p.email_user,p.nit,p.nombrefiscal,p.direccionfiscal,r.idrol,r.nombrerol,p.categoriaid,c.idcategoria,c.nombre,p.status, DATE_FORMAT(p.datecreated, '%d-%m-%Y') as fechaRegistro 
 					FROM persona p
 					INNER JOIN rol r
 					ON p.rolid = r.idrol
+					INNER JOIN categoria c
+					ON p.categoriaid = c.idcategoria
 					WHERE p.idpersona = $this->intIdUsuario";
 			$request = $this->select($sql);
 			return $request;
 		}
 
-		public function updateUsuario(int $idUsuario, string $identificacion, string $nombre, string $apellido, int $telefono, string $email, string $password, int $tipoid, int $status){
+		public function updateUsuario(int $idUsuario, string $identificacion, string $nombre, string $apellido, int $telefono, string $email, string $password, int $tipoid, int $rubroid, int $status){
 
 			$this->intIdUsuario = $idUsuario;
 			$this->strIdentificacion = $identificacion;
@@ -92,6 +96,7 @@
 			$this->strEmail = $email;
 			$this->strPassword = $password;
 			$this->intTipoId = $tipoid;
+			$this->intRubroId = $rubroid;
 			$this->intStatus = $status;
 
 			$sql = "SELECT * FROM persona WHERE (email_user = '{$this->strEmail}' AND idpersona != $this->intIdUsuario)
@@ -102,7 +107,7 @@
 			{
 				if($this->strPassword  != "")
 				{
-					$sql = "UPDATE persona SET identificacion=?, nombres=?, apellidos=?, telefono=?, email_user=?, password=?, rolid=?, status=? 
+					$sql = "UPDATE persona SET identificacion=?, nombres=?, apellidos=?, telefono=?, email_user=?, password=?, rolid=?, categoriaid=?, status=? 
 							WHERE idpersona = $this->intIdUsuario ";
 					$arrData = array($this->strIdentificacion,
 	        						$this->strNombre,
@@ -111,9 +116,10 @@
 	        						$this->strEmail,
 	        						$this->strPassword,
 	        						$this->intTipoId,
+									$this->intRubroId,
 	        						$this->intStatus);
 				}else{
-					$sql = "UPDATE persona SET identificacion=?, nombres=?, apellidos=?, telefono=?, email_user=?, rolid=?, status=? 
+					$sql = "UPDATE persona SET identificacion=?, nombres=?, apellidos=?, telefono=?, email_user=?, rolid=?, categoriaid=?, status=? 
 							WHERE idpersona = $this->intIdUsuario ";
 					$arrData = array($this->strIdentificacion,
 	        						$this->strNombre,
@@ -121,6 +127,7 @@
 	        						$this->intTelefono,
 	        						$this->strEmail,
 	        						$this->intTipoId,
+									$this->intRubroId,
 	        						$this->intStatus);
 				}
 				$request = $this->update($sql,$arrData);

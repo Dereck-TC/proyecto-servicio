@@ -202,6 +202,9 @@
 								<span class="stext-105 cl3">
 									<?= SMONEY.formatMoney($arrServicios[$p]['precio']); ?>
 								</span>
+								<span class="stext-105 cl3">
+									Proveedor: <?= $arrServicios[$p]['persona']; ?>
+								</span>
 							</div>
 
 							<!-- <div class="block2-txt-child2 flex-r p-t-3">

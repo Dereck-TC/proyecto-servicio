@@ -27,7 +27,7 @@
 
 		public function setUsuario(){
 			if($_POST){			
-				if(empty($_POST['txtIdentificacion']) || empty($_POST['txtNombre']) || empty($_POST['txtApellido']) || empty($_POST['txtTelefono']) || empty($_POST['txtEmail']) || empty($_POST['listRolid']) || empty($_POST['listStatus']) )
+				if(empty($_POST['txtIdentificacion']) || empty($_POST['txtNombre']) || empty($_POST['txtApellido']) || empty($_POST['txtTelefono']) || empty($_POST['txtEmail']) || empty($_POST['listRolid']) || empty($_POST['listRubro']) || empty($_POST['listStatus']) )
 				{
 					$arrResponse = array("status" => false, "msg" => 'Datos incorrectos.');
 				}else{ 
@@ -38,6 +38,7 @@
 					$intTelefono = intval(strClean($_POST['txtTelefono']));
 					$strEmail = strtolower(strClean($_POST['txtEmail']));
 					$intTipoId = intval(strClean($_POST['listRolid']));
+					$intRubroId = intval(strClean($_POST['listRubro']));
 					$intStatus = intval(strClean($_POST['listStatus']));
 					$request_user = "";
 					if($idUsuario == 0)
@@ -53,6 +54,7 @@
 																				$strEmail,
 																				$strPassword, 
 																				$intTipoId, 
+																				$intRubroId,
 																				$intStatus );
 						}
 					}else{
@@ -67,6 +69,7 @@
 																		$strEmail,
 																		$strPassword, 
 																		$intTipoId, 
+																		$intRubroId,
 																		$intStatus);
 						}
 

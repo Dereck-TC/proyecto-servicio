@@ -20,11 +20,15 @@ trait TServicio{
 						c.nombre as categoria,
 						p.precio,
 						p.ruta,
-						p.stock
+						p.stock,
+						p.idpersona,
+						u.nombres as persona
 				FROM servicio p 
 				INNER JOIN categoria c
 				ON p.categoriaid = c.idcategoria
-				WHERE p.status != 0 ORDER BY p.idservicio DESC LIMIT ".CANTPORDHOME;
+				INNER JOIN persona u
+				ON p.idpersona = u.idpersona
+				WHERE p.status = 1 ORDER BY p.idservicio DESC LIMIT ".CANTPORDHOME;
 				$request = $this->con->select_all($sql);
 				if(count($request) > 0){
 					for ($c=0; $c < count($request) ; $c++) { 
@@ -54,10 +58,15 @@ trait TServicio{
 						c.nombre as categoria,
 						p.precio,
 						p.ruta,
-						p.stock
+						p.stock,
+						p.valoracion,
+						p.idpersona,
+						u.nombres as persona
 				FROM servicio p 
 				INNER JOIN categoria c
 				ON p.categoriaid = c.idcategoria
+				INNER JOIN persona u
+				ON p.idpersona = u.idpersona
 				WHERE p.status = 1 ORDER BY p.idservicio DESC LIMIT $desde,$porpagina";
 				$request = $this->con->select_all($sql);
 				if(count($request) > 0){
@@ -105,7 +114,7 @@ trait TServicio{
 					FROM servicio p 
 					INNER JOIN categoria c
 					ON p.categoriaid = c.idcategoria
-					WHERE p.status != 0 AND p.categoriaid = $this->intIdcategoria AND c.ruta = '{$this->strRuta}'
+					WHERE p.status = 1 AND p.categoriaid = $this->intIdcategoria AND c.ruta = '{$this->strRuta}'
 					ORDER BY p.idservicio DESC ".$where;
 					$request = $this->con->select_all($sql);
 					if(count($request) > 0){
@@ -154,7 +163,7 @@ trait TServicio{
 				ON p.categoriaid = c.idcategoria
 				INNER JOIN persona u
 				ON p.idpersona = u.idpersona
-				WHERE p.status != 0 AND p.idservicio = '{$this->intIdServicio}' AND p.ruta = '{$this->strRuta}' ";
+				WHERE p.status = 1 AND p.idservicio = '{$this->intIdServicio}' AND p.ruta = '{$this->strRuta}' ";
 				$request = $this->con->select($sql);
 				if(!empty($request)){
 					$intIdServicio = $request['idservicio'];
@@ -201,7 +210,7 @@ trait TServicio{
 				FROM servicio p 
 				INNER JOIN categoria c
 				ON p.categoriaid = c.idcategoria
-				WHERE p.status != 0 AND p.categoriaid = $this->intIdcategoria
+				WHERE p.status = 1 AND p.categoriaid = $this->intIdcategoria
 				ORDER BY $this->option LIMIT  $this->cant ";
 				$request = $this->con->select_all($sql);
 				if(count($request) > 0){
@@ -237,7 +246,7 @@ trait TServicio{
 				FROM servicio p 
 				INNER JOIN categoria c
 				ON p.categoriaid = c.idcategoria
-				WHERE p.status != 0 AND p.idservicio = '{$this->intIdServicio}' ";
+				WHERE p.status = 1 AND p.idservicio = '{$this->intIdServicio}' ";
 				$request = $this->con->select($sql);
 				if(!empty($request)){
 					$intIdServicio = $request['idservicio'];

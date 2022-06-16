@@ -151,18 +151,21 @@
 
 		public function selectServicio(int $idservicio){
 			$this->intIdServicio = $idservicio;
-			$sql = "SELECT p.idservicio,
-							p.codigo,
-							p.nombre,
-							p.descripcion,
-							p.precio,
-							p.stock,
-							p.categoriaid,
+			$sql = "SELECT s.idservicio,
+							s.codigo,
+							s.nombre,
+							s.descripcion,
+							s.precio,
+							s.stock,
+							s.categoriaid,
+							-- p.categoriaid as rubro,
 							c.nombre as categoria,
-							p.status
-					FROM servicio p
+							s.status
+					FROM servicio s
 					INNER JOIN categoria c
-					ON p.categoriaid = c.idcategoria
+					ON s.categoriaid = c.idcategoria
+					-- INNER JOIN persona p
+					-- ON s.idpersona = p.idpersona
 					WHERE idservicio = $this->intIdServicio";
 			$request = $this->select($sql);
 			return $request;

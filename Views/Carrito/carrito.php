@@ -108,14 +108,14 @@ if(isset($_SESSION['arrCarrito']) and count($_SESSION['arrCarrito']) > 0){
 			<div class="row">
 				<div class="col-lg-10 col-xl-7 m-lr-auto m-b-50">
 					<div class="m-l-25 m-r--38 m-lr-0-xl">
-						<div class="wrap-table-shopping-cart">
-							<table id="tblCarrito" class="table-shopping-cart">
-								<tr class="table_head">
-									<th class="column-1">Servicio</th>
+						<div class="wrap-table-shopping-cart" style=" border-radius: 10px;">
+							<table id="tblCarrito" class="table-shopping-cart" >
+								<tr class="table_head" style="background-color: #242323;">
+									<th class="column-1"><h4 class="mtext-109 cl7 p-b-3">Servicio</h4></th>
 									<th class="column-2"></th>
-									<th class="column-3">Precio</th>
-									<th class="column-4">Cantidad</th>
-									<th class="column-5">Total</th>
+									<th class="column-3" style="width: 250px;"><h4 class="mtext-109 cl7 p-b-3">Detalle</h4></th>
+									<!-- <th class="column-4">Cantidad</th>
+									<th class="column-5">Total</th> -->
 								</tr>
 							<?php 
 								foreach ($_SESSION['arrCarrito'] as $servicio) {
@@ -126,13 +126,16 @@ if(isset($_SESSION['arrCarrito']) and count($_SESSION['arrCarrito']) > 0){
 							 ?>
 								<tr class="table_row <?= $idServicio ?>">
 									<td class="column-1">
-										<div class="how-itemcart1" idpr="<?= $idServicio ?>" op="2" onclick="fntdelItem(this)" >
-											<img src="<?= $servicio['imagen'] ?>" alt="<?= $servicio['servicio'] ?>">
+										<div class="" idpr="<?= $idServicio ?>" op="2" onclick="fntdelItem(this)" >
+											<img src="<?= $servicio['imagen'] ?>" alt="<?= $servicio['servicio'] ?>" style="width: 100xp; height: 200px">
 										</div>
 									</td>
-									<td class="column-2"><?= $servicio['servicio'] ?></td>
-									<td class="column-3"><?= SMONEY.formatMoney($servicio['precio']) ?></td>
-									<td class="column-4">
+									<td class="column-2"> ></td>
+									<td class="column-3">
+										<?= $servicio['servicio'] ?></br>
+										<?= SMONEY.formatMoney($servicio['precio']) ?>	
+										</td>
+									<!-- <td class="column-4">
 										<div class="wrap-num-product flex-w m-l-auto m-r-0">
 											<div class="btn-num-product-down cl8 hov-btn3 trans-04 flex-c-m"
 											idpr="<?= $idServicio ?>">
@@ -146,8 +149,8 @@ if(isset($_SESSION['arrCarrito']) and count($_SESSION['arrCarrito']) > 0){
 												<i class="fs-16 zmdi zmdi-plus"></i>
 											</div>
 										</div>
-									</td>
-									<td class="column-5"><?= SMONEY.formatMoney($totalServicio) ?></td>
+									</td> -->
+									<!-- <td class="column-5"><?= SMONEY.formatMoney($totalServicio) ?></td> -->
 								</tr>
 							<?php } ?>
 
@@ -164,37 +167,38 @@ if(isset($_SESSION['arrCarrito']) and count($_SESSION['arrCarrito']) > 0){
 							<div class="flex-c-m stext-101 cl2 size-119 bg8 bor13 hov-btn3 p-lr-15 trans-04 pointer m-tb-10">
 								Update Cart
 							</div>
-						</div> -->
+						</div>  -->
 					</div>
 				</div>
+				
 
 				<div class="col-sm-10 col-lg-7 col-xl-5 m-lr-auto m-b-50">
-					<div class="bor10 p-lr-40 p-t-30 p-b-40 m-l-63 m-r-40 m-lr-0-xl p-lr-15-sm">
-						<h4 class="mtext-109 cl2 p-b-30">
+					<div class="bor10 p-lr-40 p-t-30 p-b-40 m-l-63 m-r-40 m-lr-0-xl p-lr-15-sm" style="background-color: #242323; border-radius: 10px;">
+						<h4 class="mtext-109 cl7 p-b-30">
 							Totales
 						</h4>
 
 						<div class="flex-w flex-t bor12 p-b-13">
 							<div class="size-208">
-								<span class="stext-110 cl2">
+								<span class="stext-110 cl7">
 									Subtotal:
 								</span>
 							</div>
 
 							<div class="size-209">
-								<span id="subTotalCompra" class="mtext-110 cl2">
+								<span id="subTotalCompra" class="mtext-110 cl7">
 									<?= SMONEY.formatMoney($subtotal) ?>
 								</span>
 							</div>
 
 							<div class="size-208">
-								<span class="stext-110 cl2">
+								<span class="stext-110 cl7">
 									Envío:
 								</span>
 							</div>
 
 							<div class="size-209">
-								<span class="mtext-110 cl2">
+								<span class="mtext-110 cl7">
 									<?= SMONEY.formatMoney(COSTOENVIO) ?>
 								</span>
 							</div>
@@ -213,13 +217,13 @@ if(isset($_SESSION['arrCarrito']) and count($_SESSION['arrCarrito']) > 0){
 						</div>
 						<div class="flex-w flex-t p-t-27 p-b-33">
 							<div class="size-208">
-								<span class="mtext-101 cl2">
+								<span class="mtext-101 cl7">
 									Total:
 								</span>
 							</div>
 
 							<div class="size-209 p-t-1">
-								<span id="totalCompra" class="mtext-110 cl2">
+								<span id="totalCompra" class="mtext-110 cl7">
 									<?= SMONEY.formatMoney($subtotal + COSTOENVIO) ?>
 								</span>
 							</div>
@@ -312,7 +316,7 @@ if(isset($_SESSION['arrCarrito']) and count($_SESSION['arrCarrito']) > 0){
 									</div>
 									<br>
 									<!-- <button type="submit" id="btnComprar" class="flex-c-m stext-101 cl0 size-116 bg3 bor14 hov-btn3 p-lr-15 trans-04 pointer">Procesar pedido</button> -->
-									<a href="" id="btnComprar" class="btn btn-primary">
+									<a href="#" id="btnComprar" class="btn btn-primary">
 										Procesar pago
 									</a>
 								</div>
@@ -326,7 +330,7 @@ if(isset($_SESSION['arrCarrito']) and count($_SESSION['arrCarrito']) > 0){
 							</div>
 						</div>
 					</div>	
-					</div>
+				</div>
 				</div>
 			</div>
 		</div>

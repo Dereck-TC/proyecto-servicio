@@ -23,6 +23,8 @@
 			$data['page_name'] = "categorias";
 			$data['page_functions_js'] = "functions_categorias.js";
 			$this->views->getView($this,"categorias",$data);
+			// $idpersona = $_SESSION["userData"]["idpersona"];
+			// var_dump($idpersona);
 		}
 
 		public function setCategoria(){
@@ -169,7 +171,7 @@
 
 		public function getSelectCategorias(){
 			$htmlOptions = "";
-			$arrData = $this->model->selectCategorias();
+			$arrData = $this->model->selectCategoria();
 			if(count($arrData) > 0 ){
 				for ($i=0; $i < count($arrData); $i++) { 
 					if($arrData[$i]['status'] == 1 ){
@@ -177,6 +179,17 @@
 					}
 				}
 			}
+			echo $htmlOptions;
+			die();	
+		}
+
+		public function getSelectCategoriaRubro(){
+			$htmlOptions = "";
+			$idpersona = $_SESSION["userData"]["idpersona"];
+			var_dump($idpersona);
+			$arrData = $this->model->selectCategoriaRubro($idpersona);
+			var_dump($arrData);
+			$htmlOptions .= '<option value="'.$arrData['idcategoria'].'">'.$arrData['nombre'].'</option>';
 			echo $htmlOptions;
 			die();	
 		}
