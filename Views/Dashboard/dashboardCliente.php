@@ -85,7 +85,7 @@ navAdminn($data); ?>
                   <td><?= $pedido['nombre'] ?></td>
                   <td><?= $pedido['status'] ?></td>
                   <td class="text-right"><?= SMONEY." ".formatMoney($pedido['monto']) ?></td>
-                  <td><a href="<?= base_url() ?>/pedidos/orden/<?= $pedido['idpedido'] ?>" target="_blank"><i class="fa fa-eye" aria-hidden="true"></i></a></td>
+                  <!-- <td><a href="<?= base_url() ?>/pedidos/orden/<?= $pedido['idpedido'] ?>" target="_blank"><i class="fa fa-eye" aria-hidden="true"></i></a></td> -->
                 </tr>
                 <?php } 
                   } ?>
@@ -96,7 +96,7 @@ navAdminn($data); ?>
         </div>
         <?php } ?>
 
-        <div class="col-md-6">
+        <!-- <div class="col-md-6">
           <div class="tile">
             <div class="container-title">
               <h3 class="tile-title">Últimos Servicios</h3>
@@ -129,10 +129,10 @@ navAdminn($data); ?>
             </div>
             
           </div>
-        </div>
+        </div> -->
       </div>
 
-      <div class="row">
+      <!-- <div class="row">
         <div class="col-md-12">
           <div class="tile">
             <div class="container-title">
@@ -146,7 +146,7 @@ navAdminn($data); ?>
           </div>
         </div>
         
-      </div>
+      </div> -->
 
     </main>
 <?php footerAdmin($data); ?>

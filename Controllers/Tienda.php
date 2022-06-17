@@ -485,7 +485,7 @@
 					//$valoracionprom = $_POST['ratingAverage'];
 					$idservicio  = $_POST['idservicio'];
 					$userContact = $this->setContacto($nombre,$email,$mensaje,$valoracion,$idservicio/**,$ip,$dispositivo,$useragent*/);
-					$userValoracion = $this->updateValoracion($idservicio);
+					//$userValoracion = $this->updateValoracion($idservicio);
 					if($userContact > 0 ){
 						$arrResponse = array('status' => true, 'msg' => "Su mensaje fue enviado correctamente.");
 						

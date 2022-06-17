@@ -103,7 +103,7 @@
 		<!-- Header desktop -->
 		<div class="container-menu-desktop">
 			<!-- Topbar -->
-			<div class="top-bar" style="background-color: blue;">
+			<div class="top-bar" style="background-color: #007bff;">
 				<div class="content-topbar flex-sb-m h-full container" >
 					<div class="left-top-bar">
 						<!-- <?php if(isset($_SESSION['login'])){ ?>
@@ -217,19 +217,19 @@
 		<!-- Menu Mobile -->
 		<div class="menu-mobile" >
 			<ul class="topbar-mobile" >
-				<li style="background-color: blue;">
+				<li style="background-color: #007bff;">
 					<div class="left-top-bar">
 						
 					</div>
 				</li>
 
-				<li style="background-color: blue;">
+				<li style="background-color: #007bff;">
 					<div class="flex-w h-full">
 						
 						<?php 
 							if(isset($_SESSION['login'])){
 						?>
-						<a href="<?= base_url() ?>/dashboard" class="flex-c-m trans-04 p-lr-25">
+						<a href="<?= base_url() ?>/dashboard" style="color: #fff;" class="flex-c-m trans-04 p-lr-25" >
 							Mi cuenta
 						</a>
 						<?php } 

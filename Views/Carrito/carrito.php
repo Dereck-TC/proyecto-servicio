@@ -285,19 +285,19 @@ if(isset($_SESSION['arrCarrito']) and count($_SESSION['arrCarrito']) > 0){
 								Método de pago
 							</h4>
 							<div class="divmetodpago">
-								<div>
+								<!-- <div>
 									<label for="paypal">
 										<input type="radio" id="paypal" class="methodpago" name="payment-method" checked="" value="Paypal">
 										<img src="<?= media()?>/images/img-paypal.jpg" alt="Icono de PayPal" class="ml-space-sm" width="74" height="20">
 									</label>
-								</div>
+								</div> -->
 								<div>
 									<label for="contraentrega">
 										<input type="radio" id="contraentrega" class="methodpago" name="payment-method" value="CT">
 										<span>Contra Entrega</span>
 									</label>
 								</div>
-								<div id="divtipopago" class="notblock" >
+								<div id="divtipopago" class="#" >
 									<label for="listtipopago">Tipo de pago</label>
 									<div class="rs1-select2 rs2-select2 bor8 bg0 m-b-12 m-t-9">
 										<select id="listtipopago" class="js-select2" name="listtipopago">

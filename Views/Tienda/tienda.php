@@ -40,9 +40,9 @@ $arrServicios = $data['servicios'];
 								<span class="stext-105 cl3">
 									Proveedor: <?= $arrServicios[$p]['persona']; ?>
 								</span>
-								<span class="stext-105 cl3">
+								<!-- <span class="stext-105 cl3">
 									<?= $arrServicios[$p]['valoracion']; ?><i class="fa fa-star" aria-hidden="true"></i>
-								</span>
+								</span> -->
 							</div>
 							<div class="block2-txt-child2 flex-r p-t-3">
 								<!-- <a href="#"

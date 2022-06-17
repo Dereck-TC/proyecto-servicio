@@ -29,8 +29,10 @@
 		}	
 		public function selectPedidosProv($idpersona = null){
 			$where = "";
-			if($idpersona != null){
+			if($idpersona != null && $idpersona != 1){
 				$where = "  WHERE s.idpersona = $idpersona";
+			}else if($idpersona == 1){
+				$$where = "";
 			}
 			$sql = "SELECT p.idpedido,
 							p.referenciacobro,

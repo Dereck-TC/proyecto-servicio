@@ -96,7 +96,7 @@
 	const RSUPERVISOR = 2;
 	const RCLIENTES = 3;
 
-	const STATUS = array('Completo','Aprobado','Cancelado','Reembolsado','Pendiente','Entregado');
+	const STATUS = array('Cancelado','Pendiente','Entregado');
 
 	//Servicios por página
 	const CANTPORDHOME = 8;

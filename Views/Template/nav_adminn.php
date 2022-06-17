@@ -137,7 +137,7 @@
                         </a>
                     </li> 
                     <?php } ?>
-                    <?php if(!empty($_SESSION['permisos'][5]['r'])){ ?>
+                    <?php if(!empty($_SESSION['permisos'][5]['r']) && $_SESSION['userData']['idrol']!=3){ ?>
                     <li class="">
                         <a class="opt" href="<?= base_url(); ?>/pedidos">
                             <i class="fa fa-cubes icon"></i>
@@ -153,23 +153,23 @@
                         </a>
                     </li>
                     <?php } ?>-->
-                    <?php if(!empty($_SESSION['permisos'][MDCONTACTOS]['r'])){ ?>
+                    <!-- <?php if(!empty($_SESSION['permisos'][MDCONTACTOS]['r'])){ ?>
                     <li class="">
                         <a class="opt" href="<?= base_url(); ?>/suscriptores">
                             <i class="fa fa-paper-plane icon"></i>
                             <span class="text nav-text">Solicitudes</span>
                         </a>
                     </li>
-                    <?php } 
-                    // var_dump($_SESSION['userData']['idrol']) ?>
-                    <?php if($_SESSION['userData']['idrol']==3){ ?>
+                    <?php }
+                    // var_dump($_SESSION['userData']['idrol']) ?>  -->
+                    <!-- <?php if($_SESSION['userData']['idrol']==3){ ?>
                     <li class="">
                         <a class="opt" href="<?= base_url(); ?>/paginas">
                             <i class="fa fa-paper-plane icon"></i>
                             <span class="text nav-text">Ascender</span>
                         </a>
                     </li>
-                    <?php } ?>
+                    <?php } ?> -->
                     <!--<?php if(!empty($_SESSION['permisos'][MDPAGINAS]['r'])){ ?>
                     <li class="">
                         <a class="opt" href="<?= base_url(); ?>/paginas">

@@ -3382,6 +3382,7 @@ iframe {border: none;}
 .flex-m {
 	-ms-align-items: center;
 	align-items: center;
+	
 }
 
 .flex-str {
@@ -3395,6 +3396,7 @@ iframe {border: none;}
 	justify-content: center;
 	-ms-align-items: center;
 	align-items: center;
+	color: #fff;
 }
 
 .flex-c-t {

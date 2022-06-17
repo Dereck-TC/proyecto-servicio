@@ -400,7 +400,7 @@ var valoraciones = document.getElementsByClassName('rating__control');
 //coments = $('#coments');
 //var div = document.getElementById("ratingRT");
 // var valoracionprom = document.getElementById("ratingAverage").innerHTML;
-console.log(ratingAverage);
+// console.log(ratingAverage);
 if(document.querySelector("#frmContacto")){
 	let frmContacto = document.querySelector("#frmContacto");
 	frmContacto.addEventListener('submit',function(e) { 

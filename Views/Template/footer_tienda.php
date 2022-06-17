@@ -48,7 +48,7 @@
 					</div>
 				</div>-->
 
-				<div class="col-sm-6 col-lg-4 p-b-50">
+				<!-- <div class="col-sm-6 col-lg-4 p-b-50">
 					<h4 class="stext-301 cl0 p-b-30">
 						Suscríbete
 					</h4>
@@ -70,7 +70,7 @@
 							</button>
 						</div>
 					</form>
-				</div>
+				</div> -->
 		<!---	</div>
 
 			<div class="p-t-40">
